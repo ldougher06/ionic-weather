@@ -1,5 +1,14 @@
 <ion-view view-title="{{city}}">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-star" menu-toggle="left" ng-click="makeFavorite({city:params.city, lat:params.lat, long:params.long})">
+    </button>
+  </ion-nav-buttons>
   <ion-content>
-    <h1>Here's the weather</h1>
+    <div class="row">
+      <div class="col center">
+        <h1 ng-hide="current">--°{{scale}}</h1>
+        <h1 ng-show="current">{{current.temperature | number:precision}}°{{scale}}</h1>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
